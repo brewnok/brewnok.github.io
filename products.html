@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Products</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="description"
+    content="brewnok is a leading software development and digital marketing company specializing in IT services like software development, website development, quality assurance, observability/data analytics, database administration, automation solutions, and digital marketing services like SEO/SEM, social media marketing, WhatsApp marketing, email marketing, brand awareness, and content creation. Boost your business with expert-driven technology and marketing strategies." />
+  <meta name="keywords"
+    content="brewnok, IT services, digital marketing services, software development, website development, quality assurance, observability, data analytics, database administration, automation solutions, SEO services, SEM services, social media marketing, WhatsApp marketing, email marketing, brand awareness, content creation, custom software, SaaS development, cloud solutions, enterprise software, IT consulting, web design, UI/UX design, eCommerce development, CMS development, WordPress development, Shopify development, front-end development, back-end development, full-stack development, PHP development, Python development, Java development, React development, Angular development, PPC advertising, Google Ads, Facebook Ads, LinkedIn Ads, content marketing, lead generation, online marketing, influencer marketing, website optimization, conversion rate optimization (CRO), performance marketing, digital strategy, IT solutions" />
+  <meta name="author" content="brewnok" />
+  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="brewnok | IT & Digital Marketing Services" />
+  <meta property="og:description"
+    content="brewnok is a leading software development and digital marketing company specializing in IT services like software development, website development, quality assurance, observability/data analytics, database administration, automation solutions, and digital marketing services like SEO/SEM, social media marketing, WhatsApp marketing, email marketing, brand awareness, and content creation. Boost your business with expert-driven technology and marketing strategies." />
+  <meta property="og:image" content="https://brewnok.com/img/brewnok_logo.png" />
+  <meta property="og:url" content="https://brewnok.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="brewnok | IT & Digital Marketing Services" />
+  <meta name="twitter:description"
+    content="brewnok is a leading software development and digital marketing company specializing in IT services like software development, website development, quality assurance, observability/data analytics, database administration, automation solutions, and digital marketing services like SEO/SEM, social media marketing, WhatsApp marketing, email marketing, brand awareness, and content creation. Boost your business with expert-driven technology and marketing strategies." />
+  <meta name="twitter:image" content="https://brewnok.com/img/brewnok_logo.png" />
+  <meta name="twitter:site" content="@brewnokofficial" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://brewnok.com/products" /> <!-- Remove .html extension -->
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .product-link {
+      display: block;
+      padding: 8px 0;
+      text-decoration: none;
+    }
+    
+    .product-link.active {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    #product-content {
+      transition: none;
+      min-height: 400px; /* Ensure consistent height during transitions */
+    }
+    
+    .products-logo {
+      width: auto;
+      display: block;
+      margin: 0 auto;
+      max-height: 100px;
+    }
+  
+    .coming-soon-text {
+      color: #ff0000;
+      font-weight: bold;
+      margin-left: 5px;
+      animation: blink 1.5s infinite;
+    }
+  
+    @keyframes blink {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    
+    /* Animation styles */
+    .product-content-inner {
+      opacity: 1;
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+    
+    .fade-in {
+      animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    .fade-out {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    </style>
+
+</head>
+
+<body class="service-details-page">
+
+
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div
+      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0" title="Return to Brewnok Homepage">
+        <img src="assets/img/brewnoklogo2.png" alt="Brewnok Company Logo">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" title="Go to Homepage">Home</a></li>
+          <li class="dropdown">
+            <a title="View Our Services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="it-services.html" title="View IT Services">IT Services</a></li>
+              <li><a href="digital-marketing-services.html" title="Explore Digital Marketing Services">Digital Marketing Services</a></li>
+            </ul>
+          </li>
+          <li><a href="products.html" class="active" title="Browse Our Products">Products</a></li>
+          <li><a href="free-products.html" title="Access Free Tools">Free Products</a></li>
+          <li><a href="about.html" title="Learn About Us">About</a></li>
+          <li><a href="contact.html" title="Contact Us">Contact</a></li>
+        </ul>
+      </nav>
+
+
+
+      <a class="btn-getstarted" href="https://forms.gle/i9rpynCyUjmaMmzQ9" target="_blank">Get Quote</a>
+
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>Our Products</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Products</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-box">
+              <h4>Our Premium Products</h4>
+              <div class="services-list">
+                <a href="#" data-product="managerji" class="product-link active" title="Hotel Management System">
+                  <i class="bi bi-arrow-right-circle"></i><span>managerji</span>
+                </a>
+               
+                <a href="#" data-product="cominqr" class="product-link" title="QR-based Ticketing System">
+                  <i class="bi bi-arrow-right-circle"></i><span>cominQR</span>
+                </a>
+                <a href="#" data-product="slot4dine" class="product-link" title="Restaurant Reservation System">
+                  <i class="bi bi-arrow-right-circle"></i><span>slot4dine</span>
+                </a>
+                <a href="#" data-product="schedmate" class="product-link" title="Appointment Management System">
+                  <i class="bi bi-arrow-right-circle"></i><span>schedmate</span>
+                </a>
+                <a href="#" data-product="buildingbugs" class="product-link" title="Building Ticket Management System">
+                  <i class="bi bi-arrow-right-circle"></i><span>buildingBugs</span>
+                </a>
+                <a href="#" data-product="hupwiz" class="product-link" title="Gym Management Software">
+                  <i class="bi bi-arrow-right-circle"></i><span>hupwiz</span>
+                </a>
+              </div>
+            </div>
+    
+            <div class="service-box">
+              <h4>Download</h4>
+              <div class="download-catalog">
+                <a href="assets/data/managerji.pdf" target="_blank" title="Download ManagerJi Documentation">
+                  <i class="bi bi-filetype-pdf"></i><span>managerji document</span>
+                </a>
+               
+                <a href="#" onclick="return false;" title="CominQR Documentation - Coming Soon">
+                  <i class="bi bi-filetype-pdf"></i><span>cominQR document <small class="coming-soon-text">COMING SOON!</small></span>
+                </a>
+                <a href="#" onclick="return false;" title="Slot4Dine Documentation - Coming Soon">
+                  <i class="bi bi-filetype-pdf"></i><span>slot4dine document <small class="coming-soon-text">COMING SOON!</small></span>
+                </a>
+                <a href="assets/data/schedmate.pdf" target="_blank" title="Download SchedMate Documentation">
+                  <i class="bi bi-filetype-pdf"></i><span>schedmate Document</span>
+                </a>
+                <a href="assets/data/buildingBugs.pdf" target="_blank" title="Download BuildingBugs Documentation">
+                  <i class="bi bi-filetype-pdf"></i><span>buildingBugs document</span>
+                </a>
+                <a href="assets/data/hupwiz_v1.1.pdf" target="_blank" title="Download HupWiz Documentation">
+                  <i class="bi bi-filetype-pdf"></i><span>hupwiz document</span>
+                </a>
+              </div>
+            </div>
+    
+            <div class="help-box d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-headset help-icon"></i>
+              <h4>Have a Question?</h4>
+              <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>(+91) </span></p>
+              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:admin@brewnok.com">admin@brewnok.com</a></p>
+            </div>
+          </div>
+    
+          <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <div id="product-content">
+              <!-- Content will be loaded dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center" title="Return to Homepage">
+            <img src="assets/img/brewnoklogo2.png" alt="Brewnok Company Logo">
+          </a>
+          <div class="footer-contact pt-0">
+            <p>Agartala, Tripura, IN 799007</p>
+            <p class="mt-1"><strong><i class="bi bi-telephone"></i> </strong> <span>(+91) </span></p>
+            <p><strong><i class="bi bi-envelope"></i> </strong> <span>admin@brewnok.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.x.com/brewnokofficial" target="_blank" title="Follow Us on X (Twitter)">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.facebook.com/brewnok" target="_blank" title="Connect with Us on Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/brewnok" target="_blank" title="Follow Us on Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/brewnok" target="_blank" title="Connect on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://wa.me/917980919179" target="_blank" title="Message Us on WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://forms.gle/nJnPZpHg3mJBMNbF7" target="_blank">Career</a></li>
+            <li><a href="tnc.html" target="_blank">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 footer-links">
+          <h4>IT</h4>
+          <ul>
+            <li><a href="it-services.html">Software Development</a></li>
+            <li><a href="it-services.html">Website Development</a></li>
+            <li><a href="it-services.html">Quality Assurance</a></li>
+            <li><a href="it-services.html">Observability & Data Analytics</a></li>
+            <li><a href="it-services.html">Database Administration</a></li>
+            <li><a href="it-services.html">Automation Solutions</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 footer-links">
+          <h4>Digital Marketing</h4>
+          <ul>
+            <li><a href="digital-marketing-services.html">SEO / SEM</a></li>
+            <li><a href="digital-marketing-services.html">Social Media Marketing</a></li>
+            <li><a href="digital-marketing-services.html">Content Creation</a></li>
+            <li><a href="digital-marketing-services.html">Brand Awareness</a></li>
+            <li><a href="digital-marketing-services.html">WhatsApp Marketing</a></li>
+            <li><a href="digital-marketing-services.html">Email Marketing</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 footer-links">
+          <h4>Free Products</h4>
+          <ul>
+            <li><a href="https://brewnok.github.io/b64gen" target="_blank">b64gen</a></li>
+            <li><a href="https://feedrelic.onrender.com" target="_blank">feedrelic</a></li>
+            <li><a href="https://sizefoto.onrender.com" target="_blank">sizefoto</a></li>
+            <li><a href="https://playsql.onrender.com" target="_blank">playSQL</a></li>
+            <li><a href="https://brewtask.onrender.com" target="_blank">brewtask</a></li>
+            <li><a href="https://seomap.onrender.com" target="_blank">seomap</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <strong class="px-1 sitename">Brewnok Consultancy</strong></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" title="Scroll to Top">
+    <i class="bi bi-arrow-up-short"></i></a>
+      <script>
+        const productDetails = {
+          managerji: {
+            logo: "assets/img/products/managerji-logo.png",
+            title: "managerji",
+            description: `<p><strong>managerji</strong> is a cutting-edge hotel management solution that streamlines every aspect of
+              hotel operations, from check-ins to check-outs. With a clean, intuitive interface, the application makes it easy for hotel
+              managers to handle guest arrivals and departures with minimal effort. The system tracks room availability
+              in real-time and allows managers to quickly update room statuses, ensuring a smooth and efficient
+              workflow. Whether you're handling a single floor or multiple levels, <strong>managerji</strong> offers
+              seamless floor management, making it ideal for hotels of all sizes.</p>`,
+            image: "assets/img/products/managerji-mockup.jpg",
+            additional: `<p>One of <strong>managerji</strong>'s standout features is its powerful service management system, which
+              allows hotel managers to easily track and update in-room services. From restaurant orders to room requests, everything
+              is tracked in one place. The system is fully customizable to meet the specific needs of your hotel, with
+              the ability to modify room configurations, service types, and pricing.</p>
+              <p>What sets <strong>managerji</strong> apart from other hotel management solutions is its offline
+              functionality. Unlike many hotel management applications that require a constant internet connection, <strong>managerji</strong>
+              operates smoothly even without an internet connection. This means you can continue managing your hotel seamlessly without
+              worrying about connectivity issues.</p>`
+          },
+          schedmate: {
+            logo: "assets/img/products/schedmate-logo.png",
+            title: "cominQR",
+            description: `<p><strong>schedmate</strong> is a comprehensive Appointment Management System (AMS) developed by Brewnok, designed to simplify and optimize scheduling for businesses across various industries. Built using the MERN stack (MongoDB, Express.js, React, and Node.js), it offers a scalable, user-friendly platform that caters to businesses like healthcare providers, salons, and professional services. With features such as real-time booking, automated reminders, and customizable options, schedmate reduces administrative burdens and enhances operational efficiency. Its adaptability allows it to meet the specific needs of any business reliant on appointments, making it a versatile tool for improving client interactions and business workflows.</p>`,
+            image: "assets/img/products/schedmate-mockup.jpg",
+            additional: `<p><strong>schedmate</strong> streamlines appointment management by automating key processes like booking, rescheduling, and cancellations, minimizing scheduling conflicts through real-time updates and conflict detection. It enhances the client experience with seamless online booking, automated email or WhatsApp notifications, and personalized service tracking, reducing no-shows and boosting satisfaction. For businesses, it offers an intuitive admin dashboard, data insights, and reporting tools to optimize schedules and decision-making, while its mobile-friendly design and scalability ensure flexibility and growth potential, allowing staff to focus on delivering quality services rather than managing logistics.</p>`
+          },
+          cominqr: {
+            logo: "assets/img/products/cominqr-logo.png",
+            title: "cominQR",
+            description: `<p><strong>cominQR</strong> is a next-generation ticketing solution that simplifies event management by
+              providing a seamless and secure experience for both organizers and attendees. The app generates a unique QR code for each
+              participant, ensuring that every ticket is personalized and authentic. Organizers can easily scan these
+              codes at the venue for quick entry, eliminating the hassle of paper tickets and manual check-ins.</p>`,
+            image: "assets/img/products/cominqr-mockup.jpg",
+            additional: `<p>A key feature of <strong>cominQR</strong> is its user-friendly admin panel, which gives event organizers
+              complete control over attendee management. Through the dashboard, organizers can easily access and modify attendee
+              information, such as ticket details, check-in status, and personal data.</p>
+              <p>What truly sets <strong>cominQR</strong> apart is its flexibility and scalability. Whether it's a small local gathering or
+              a large-scale event, <strong>cominQR</strong> adapts to suit the unique needs of each event. Its customizable features,
+              such as ticket categories and access control options, give organizers the ability to tailor the experience
+              to their specific requirements.</p>`
+          },
+          slot4dine: {
+            logo: "assets/img/products/slot4dine-logo.png",
+            title: "slot4dine",
+            description: `<p><strong>slot4dine</strong> is a comprehensive reservation system designed to simplify the process of
+              managing restaurant bookings. With its intuitive platform, customers can easily make reservations online, ensuring that they
+              secure a spot at their preferred time and date. Whether it's a casual dinner or a special event,
+              <strong>slot4dine</strong> provides a seamless booking experience for guests.</p>`,
+            image: "assets/img/products/slot4dine-mockup.jpg",
+            additional: `<p>A key feature of <strong>slot4dine</strong> is its user-friendly admin panel, which gives event organizers
+              complete control over all bookings. This centralized system helps streamline restaurant operations by providing real-time
+              updates and allowing for immediate adjustments as needed.</p>
+              <p>What truly sets <strong>slot4dine</strong> apart is its flexibility and scalability. Whether it's a small or large scale restaurant,
+              <strong>slot4dine</strong> adapts to suit the unique needs of each type of restaurant.</p>`
+          },
+          buildingbugs: {
+            logo: "assets/img/products/buildingbugs-logo.png",
+            title: "buildingBugs",
+            description: `<p><strong>buildingBugs</strong> is a powerful building ticket management system designed to streamline maintenance requests and issue reporting for residential and commercial buildings. This comprehensive solution enables residents and tenants to easily submit maintenance tickets, while providing building managers with robust tools to organize, prioritize, and track the resolution of all reported issues.</p>`,
+            image: "assets/img/products/buildingbugs-mockup.jpg",
+            additional: `<p>With <strong>buildingBugs</strong>, building managers can efficiently categorize issues by type, severity, and location, allowing for better resource allocation and quicker response times. The system includes features for assigning tasks to specific maintenance personnel, tracking progress, and communicating updates to residents.</p>
+            <p>What sets <strong>buildingBugs</strong> apart is its user-friendly interface that works on any device, enabling residents to submit tickets with photos and detailed descriptions. The system also includes powerful reporting tools that help building managers identify recurring issues and plan preventative maintenance, ultimately extending the life of building systems and improving resident satisfaction.</p>`
+          },
+          hupwiz: {
+            logo: "assets/img/products/hupwiz-logo.png",
+            title: "hupwiz",
+            description: `<p><strong>hupwiz</strong> is a comprehensive gym management software designed to handle all aspects of running a modern fitness center. From member management and attendance tracking to fitness assessment and progress monitoring, this all-in-one solution helps gym owners and managers operate their facilities more efficiently while providing an enhanced experience for their members.</p>`,
+            image: "assets/img/products/hupwiz-mockup.jpg",
+            additional: `<p><strong>hupwiz</strong> simplifies membership management with features like automated billing, contract management, and custom membership plans. The intuitive interface allows staff to quickly check members in and out, monitor gym capacity, and track attendance patterns to optimize staffing and class schedules.</p>
+            <p>What makes <strong>hupwiz</strong> stand out is its focus on member engagement and retention. The system includes tools for creating personalized workout plans, tracking member progress, scheduling fitness assessments, and sending automated communications. With its comprehensive reporting capabilities, gym owners gain valuable insights into their business performance, helping them make data-driven decisions to grow their business and improve member satisfaction.</p>`
+          }
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+          const productLinks = document.querySelectorAll('.product-link');
+          const contentDiv = document.getElementById('product-content');
+        
+          // Preload all images
+          Object.values(productDetails).forEach(product => {
+            const logoImg = new Image();
+            logoImg.src = product.logo;
+            const mockupImg = new Image();
+            mockupImg.src = product.image;
+          });
+        
+          // Pre-render all product HTML
+          const preRenderedContent = {};
+          Object.entries(productDetails).forEach(([id, product]) => {
+            preRenderedContent[id] = `
+              <div class="product-content-inner">
+                <img src="${product.logo}" 
+                     alt="${product.title} Logo" 
+                     title="${product.title} - Enterprise Software by Brewnok"
+                     class="img-fluid products-logo">
+                <br><br>
+                ${product.description}
+                <img src="${product.image}" 
+                     alt="${product.title} Interface Preview" 
+                     title="${product.title} - Product Overview"
+                     class="img-fluid">
+                <br><br>
+                ${product.additional}
+              </div>
+            `;
+          });
+        
+          // Show first product by default
+          contentDiv.innerHTML = preRenderedContent['managerji'];
+        
+          // Add click handlers
+          productLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              const productId = this.dataset.product;
+              
+              // Fade out current content
+              const currentContent = contentDiv.querySelector('.product-content-inner');
+              if (currentContent) {
+                currentContent.classList.add('fade-out');
+                
+                // Wait for fade out to complete then update content
+                setTimeout(() => {
+                  // Update content with new product
+                  contentDiv.innerHTML = preRenderedContent[productId];
+                  
+                  // Get the new content and add fade-in class
+                  const newContent = contentDiv.querySelector('.product-content-inner');
+                  if (newContent) {
+                    newContent.classList.add('fade-in');
+                  }
+                  
+                  // Update active state
+                  productLinks.forEach(l => l.classList.remove('active'));
+                  this.classList.add('active');
+                }, 300);
+              } else {
+                // If no current content, just update
+                contentDiv.innerHTML = preRenderedContent[productId];
+                
+                // Get the new content and add fade-in class
+                const newContent = contentDiv.querySelector('.product-content-inner');
+                if (newContent) {
+                  newContent.classList.add('fade-in');
+                }
+                
+                // Update active state
+                productLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+              }
+            });
+          });
+        });
+        </script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

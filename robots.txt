@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Add sitemap reference
+Sitemap: https://brewnok.com/sitemap.xml
