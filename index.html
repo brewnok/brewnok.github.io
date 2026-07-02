@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brewnok | IT Services, SRE & Automation — Agartala, Tripura, India</title>
+    <title>Brewnok | IT Services, SRE & Automation | Agartala, Tripura, India</title>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -37,7 +37,7 @@
     <header class="header" id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="assets/logo.png" alt="Brewnok Logo">
+                <img src="assets/brand_logo.png" alt="Brewnok Logo">
             </a>
             
             <button class="mobile-nav-toggle" aria-label="Toggle navigation">
@@ -59,10 +59,10 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero section fade-in">
+        <section id="hero" class="hero section slide-up">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <span class="badge">Working for your success</span>
+                    <span class="badge"><span class="animated-typing"></span><span class="typing-cursor">|</span></span>
                     <h1 class="hero-title">We provide top-tier <span>IT, SRE and Automation</span> services.</h1>
                     <p class="hero-subtitle">We eliminate downtime, streamline operations, and automate the complex - delivering IT, SRE, and automation solutions built for businesses that can't afford to slow down.</p>
                     <div class="hero-actions">
@@ -72,15 +72,15 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat-box">
-                        <h3>20+</h3>
+                        <h3 class="counter" data-target="20" data-suffix="+">0</h3>
                         <p>Clients</p>
                     </div>
                     <div class="stat-box">
-                        <h3>120+</h3>
+                        <h3 class="counter" data-target="120" data-suffix="+">0</h3>
                         <p>Projects</p>
                     </div>
                     <div class="stat-box">
-                        <h3>95%</h3>
+                        <h3 class="counter" data-target="95" data-suffix="%">0</h3>
                         <p>Satisfaction</p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about section fade-in">
+        <section id="about" class="about section slide-up">
             <div class="container about-container">
                 <div class="about-text">
                     <h2 class="section-title">Who are we?</h2>
@@ -101,16 +101,13 @@
                     </ul>
                 </div>
                 <div class="about-visual">
-                    <div class="experience-badge">
-                        <h3>10+</h3>
-                        <p>Years Experience</p>
-                    </div>
+                    <img src="assets/about_illustration.png" alt="Who are we illustration" class="hover-3d-img" style="width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);">
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="services section fade-in">
+        <section id="services" class="services section slide-up">
             <div class="container">
                 <div class="section-header center">
                     <h2 class="section-title">Our Services</h2>
@@ -118,36 +115,30 @@
                 </div>
                 
                 <div class="services-grid">
-                    <!-- IT Services -->
-                    <div class="service-card">
+                    <a href="observability.html" class="service-card scale-in" id="service-observability">
+                        <h3>Observability / Monitoring Solutions</h3>
+                        <p>Gain deep insights into system health and resolve bottlenecks before they impact your end users.</p>
+                    </a>
+                    <a href="resilience-testing.html" class="service-card scale-in" id="service-resilience">
+                        <h3>Resilience Testing</h3>
+                        <p>Validate your system's fault tolerance and ensure seamless recovery when failures happen.</p>
+                    </a>
+                    <a href="performance-testing.html" class="service-card scale-in" id="service-performance">
+                        <h3>Performance Testing</h3>
+                        <p>Ensure your applications run at peak performance under high loads with our comprehensive testing strategies.</p>
+                    </a>
+                    <a href="automation.html" class="service-card scale-in" id="service-automation">
+                        <h3>Automation Services</h3>
+                        <p>Turn repetitive workflows into hands-free pipelines - automation built, managed, and optimized as a service.</p>
+                    </a>
+                    <a href="software-development.html" class="service-card scale-in" id="service-software">
                         <h3>Software Development</h3>
                         <p>Custom tailored intuitive applications to meet your specific needs, improving efficiency and scalability.</p>
-                    </div>
-                    <div class="service-card">
+                    </a>
+                    <a href="web-development.html" class="service-card scale-in" id="service-web">
                         <h3>Web Development</h3>
                         <p>Responsive, fast-loading, and user-friendly websites for a seamless digital experience.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Observability</h3>
-                        <p>Monitor performance, identify trends, and make informed decisions with data observability.</p>
-                    </div>
-                    <!-- Digital Marketing Services -->
-                    <div class="service-card">
-                        <h3>Automation as a Service</h3>
-                        <p>Turn repetitive workflows into hands-free pipelines - automation built, managed, and optimized as a service..</p>
-                    </div>
-                    <!-- <div class="service-card">
-                        <h3>Content Creation</h3>
-                        <p>Engaging media production including videos, graphics, and copy to highlight your brand.</p>
-                    </div> -->
-                    <div class="service-card">
-                        <h3>Digital Amplification</h3>
-                        <p>Amplify your brand presence and engage with your audience across major platforms with top tier business campaigns designs</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>And many more...</h3>
-                        <!-- <p>Amplify your brand presence and engage with your audience across major platforms with top tier business campaigns designs</p> -->
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -206,43 +197,43 @@
         </section>
 
         <!-- Products Section -->
-        <section id="products" class="products section fade-in">
+        <section id="products" class="products section slide-up">
             <div class="container">
                 <div class="section-header center">
                     <h2 class="section-title">Top Products</h2>
                     <p>Leverage our built-in products to increase efficiency in your operations.</p>
                 </div>
                 <div class="products-grid">
-                    <div class="product-card">
+                    <a href="managerji.html" class="product-card">
                         <div class="product-title">ManagerJi</div>
-                        <p>End-to-end hotel operations — guests, billing, and services in one place.</p>
-                    </div>
-                    <div class="product-card">
+                        <p>End-to-end hotel operations - guests, billing, and services in one place.</p>
+                    </a>
+                    <a href="cominqr.html" class="product-card">
                         <div class="product-title">CominQR</div>
                         <p>QR-based ticketing that makes contactless entry seamless for any event.</p>
-                    </div>
-                    <div class="product-card">
+                    </a>
+                    <a href="slot4dine.html" class="product-card">
                         <div class="product-title">Slot4Dine</div>
                         <p>Restaurant reservations that work as smoothly for staff as they do for guests.</p>
-                    </div>
-                    <div class="product-card">
+                    </a>
+                    <a href="hupwiz.html" class="product-card">
                         <div class="product-title">Hupwiz</div>
-                        <p>Memberships, schedules, and floor access — everything a gym needs to run well.</p>
-                    </div>
-                    <div class="product-card">
+                        <p>Memberships, schedules, and floor access - everything a gym needs to run well.</p>
+                    </a>
+                    <a href="schedmate.html" class="product-card">
                         <div class="product-title">Schedmate</div>
                         <p>A scheduling platform that turns availability into confirmed appointments, automatically.</p>
-                    </div>
-                    <div class="product-card">
+                    </a>
+                    <a href="buildingbugs.html" class="product-card">
                         <div class="product-title">BuildingBugs</div>
-                        <p>Residential property management — maintenance, residents, and billing handled.</p>
-                    </div>
+                        <p>Residential property management - maintenance, residents, and billing handled.</p>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Free Tools Section -->
-        <section id="free-tools" class="free-tools section fade-in">
+        <section id="free-tools" class="free-tools section slide-up">
             <div class="container">
                 <div class="section-header center">
                     <h2 class="section-title">Free Tools</h2>
@@ -274,7 +265,7 @@
         </section>
 
         <!-- Process Section -->
-        <section id="process" class="process section fade-in">
+        <section id="process" class="process section slide-up">
             <div class="container">
                 <div class="section-header center">
                     <h2 class="section-title">Our Process</h2>
@@ -311,7 +302,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact section fade-in">
+        <section id="contact" class="contact section slide-up">
             <div class="container contact-container">
                 <div class="contact-info">
                     <h2 class="section-title">Want to hire us?</h2>
@@ -333,9 +324,15 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="assets/logo.png" alt="Brewnok Logo">
+                    <img src="assets/brand_logo.png" alt="Brewnok Logo">
                 </div>
-                <p>&copy; <span id="year"></span> Brewnok. All Rights Reserved.</p>
+                <div style="text-align: right;">
+                    <div style="margin-bottom: 8px; display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: #94a3b8;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="mailto:brewnok@gmail.com" style="color: #94a3b8; text-decoration: none; font-size: 0.95rem;">brewnok@gmail.com</a>
+                    </div>
+                    <p>&copy; <span id="year"></span> Brewnok. All Rights Reserved.</p>
+                </div>
             </div>
         </div>
     </footer>

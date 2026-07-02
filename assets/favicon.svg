@@ -1,21 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
-  <!-- Background -->
-  <rect width="180" height="180" fill="#23343a" rx="40"/>
-  
-  <!-- Tech inspired design - stylized B -->
-  <g fill="#ededed">
-    <!-- Left vertical bar -->
-    <rect x="40" y="40" width="20" height="100" rx="4"/>
-    
-    <!-- Top curve of B -->
-    <path d="M 60 40 Q 90 40 90 65 Q 90 85 60 85 L 60 85 Z" fill="#ededed"/>
-    
-    <!-- Bottom curve of B -->
-    <path d="M 60 85 Q 95 85 95 110 Q 95 140 60 140 L 60 140 Z" fill="#ededed"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+  </defs>
+  <!-- Centered geometric 'b' -->
+  <g transform="translate(25, 22)">
+    <circle cx="28" cy="34" r="16" fill="none" stroke="url(#ringGrad)" stroke-width="12" />
+    <rect x="0" y="0" width="12" height="56" rx="6" fill="#2563eb" />
   </g>
-  
-  <!-- Accent dots for tech feel -->
-  <circle cx="125" cy="60" r="8" fill="#FFB703"/>
-  <circle cx="140" cy="110" r="6" fill="#FFB703"/>
-  <circle cx="125" cy="135" r="7" fill="#FFB703"/>
 </svg>
