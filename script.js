@@ -1,164 +1,251 @@
-// Target: 13 September 2026, 12:00 AM IST (UTC+05:30)
-const TARGET_TIMESTAMP = new Date("2026-09-13T00:00:00+05:30").getTime();
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Nav Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('navLinks');
+    const body = document.body;
 
-// Elements
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
-const statusEl = document.getElementById("status");
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            if (navLinks.classList.contains('open')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        });
 
-const themeToggleBtn = document.getElementById("theme-toggle");
-const notifyForm = document.getElementById("notify-form");
-const emailInput = document.getElementById("email-input");
-const formFeedback = document.getElementById("form-feedback");
-const gcalLink = document.getElementById("gcal-link");
-const icalBtn = document.getElementById("ical-btn");
-
-// Helper to pad double digits
-function pad(num) {
-  return String(num).padStart(2, "0");
-}
-
-// Track previous values to trigger micro pop animation
-const previousValues = {
-  days: "",
-  hours: "",
-  minutes: "",
-  seconds: ""
-};
-
-function updateElementWithAnimation(element, newValue, key) {
-  if (previousValues[key] !== newValue) {
-    element.textContent = newValue;
-    element.classList.remove("pop-tick");
-    // Trigger reflow to restart CSS animation
-    void element.offsetWidth;
-    element.classList.add("pop-tick");
-    previousValues[key] = newValue;
-  }
-}
-
-function updateCountdown() {
-  const now = Date.now();
-  const distance = TARGET_TIMESTAMP - now;
-
-  if (distance <= 0) {
-    daysEl.textContent = "00";
-    hoursEl.textContent = "00";
-    minutesEl.textContent = "00";
-    secondsEl.textContent = "00";
-    statusEl.textContent = "We’re officially live!";
-    document.title = "We're Live! | Brewnok";
-    return;
-  }
-
-  const totalSeconds = Math.floor(distance / 1000);
-  const days = Math.floor(totalSeconds / 86400);
-  const hours = Math.floor((totalSeconds % 86400) / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-
-  updateElementWithAnimation(daysEl, pad(days), "days");
-  updateElementWithAnimation(hoursEl, pad(hours), "hours");
-  updateElementWithAnimation(minutesEl, pad(minutes), "minutes");
-  updateElementWithAnimation(secondsEl, pad(seconds), "seconds");
-}
-
-// Theme Management
-function initTheme() {
-  const savedTheme = localStorage.getItem("brewnok_theme");
-  if (savedTheme) {
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-    document.documentElement.setAttribute("data-theme", "light");
-  } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-  }
-
-  themeToggleBtn.addEventListener("click", () => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("brewnok_theme", newTheme);
-  });
-}
-
-// Calendar Integrations
-function initCalendar() {
-  // Target: 2026-09-13T00:00:00+05:30 is 2026-09-12T18:30:00Z
-  const title = encodeURIComponent("Brewnok Official Launch");
-  const details = encodeURIComponent("Brewnok is premiering today! Something new is brewing.");
-  const location = encodeURIComponent("https://brewnok.com");
-  const dates = "20260912T183000Z/20260912T193000Z";
-
-  // Google Calendar URL
-  gcalLink.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
-
-  // iCal (.ics) download
-  icalBtn.addEventListener("click", () => {
-    const icsContent = [
-      "BEGIN:VCALENDAR",
-      "VERSION:2.0",
-      "PRODID:-//Brewnok//Countdown//EN",
-      "CALSCALE:GREGORIAN",
-      "METHOD:PUBLISH",
-      "BEGIN:VEVENT",
-      "UID:launch-20260913T000000@brewnok.com",
-      "DTSTAMP:20260907T120000Z",
-      "DTSTART:20260912T183000Z",
-      "DTEND:20260912T193000Z",
-      "SUMMARY:Brewnok Official Launch",
-      "DESCRIPTION:Brewnok is premiering today! Something new is brewing.",
-      "LOCATION:https://brewnok.com",
-      "STATUS:CONFIRMED",
-      "END:VEVENT",
-      "END:VCALENDAR"
-    ].join("\r\n");
-
-    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.setAttribute("download", "brewnok-launch.ics");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  });
-}
-
-// Waitlist / Notify Form
-function initNotifyForm() {
-  const savedEmail = localStorage.getItem("brewnok_subscribed_email");
-  if (savedEmail) {
-    emailInput.value = savedEmail;
-    formFeedback.textContent = "✓ You are on the early-access list!";
-    formFeedback.className = "form-feedback success";
-  }
-
-  notifyForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = emailInput.value.trim();
-
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      formFeedback.textContent = "Please enter a valid email address.";
-      formFeedback.className = "form-feedback error";
-      emailInput.focus();
-      return;
+        // Close on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                body.style.overflow = '';
+            });
+        });
     }
 
-    localStorage.setItem("brewnok_subscribed_email", email);
-    formFeedback.textContent = "✦ You're on the list! We'll notify you first.";
-    formFeedback.className = "form-feedback success";
-  });
-}
+    // 2. FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    const expandAllBtn = document.getElementById('faqExpandAll');
+    const collapseAllBtn = document.getElementById('faqCollapseAll');
 
-// Initialise Everything
-document.addEventListener("DOMContentLoaded", () => {
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-  initTheme();
-  initCalendar();
-  initNotifyForm();
+    const toggleFaq = (item) => {
+        const isOpen = item.classList.contains('open');
+        const answer = item.querySelector('.faq-answer');
+        
+        if (isOpen) {
+            item.classList.remove('open');
+            answer.style.maxHeight = null;
+        } else {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    };
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.closest('.faq-item');
+            toggleFaq(item);
+        });
+    });
+
+    if (expandAllBtn) {
+        expandAllBtn.addEventListener('click', () => {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (!item.classList.contains('open')) toggleFaq(item);
+            });
+        });
+    }
+
+    if (collapseAllBtn) {
+        collapseAllBtn.addEventListener('click', () => {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item.classList.contains('open')) toggleFaq(item);
+            });
+        });
+    }
+
+    // 3. Scroll Reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+        revealElements.forEach(el => el.classList.add('visible'));
+    } else {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // 3-second iframe fallback
+        setTimeout(() => {
+            revealElements.forEach(el => {
+                if (!el.classList.contains('visible')) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 3000);
+    }
+
+    // 4. Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const duration = 2000;
+        let startTimestamp = null;
+
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            
+            // easeOutQuad
+            const easeProgress = progress * (2 - progress);
+            
+            const currentVal = Math.floor(easeProgress * target);
+            counter.innerText = currentVal + suffix;
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                counter.innerText = target + suffix;
+            }
+        };
+        
+        window.requestAnimationFrame(step);
+    };
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // 5. Typing Animation
+    const typingElement = document.querySelector('.animated-typing');
+    if (typingElement) {
+        const strings = [
+            'Observability & Monitoring Solutions',
+            'Website Development',
+            'Software Development',
+            'Automation Services',
+            'Performance Testing',
+            'Resilience Testing'
+        ];
+        
+        let stringIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        const type = () => {
+            const currentString = strings[stringIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentString.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentString.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typingSpeed = isDeleting ? 40 : 80;
+            
+            if (!isDeleting && charIndex === currentString.length) {
+                typingSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                stringIndex = (stringIndex + 1) % strings.length;
+                typingSpeed = 500;
+            }
+            
+            setTimeout(type, typingSpeed);
+        };
+        
+        setTimeout(type, 500);
+    }
+
+    // 6. Smooth Scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                const headerOffset = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 7. Header background on scroll
+    const nav = document.querySelector('.nav');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        // Check initial state
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        }
+    }
+
+    // 8. Tech Stack Carousel Auto-Scroll
+    const techTrack = document.querySelector('.tech-carousel-track');
+    if (techTrack) {
+        const firstGroup = techTrack.querySelector('.tech-carousel-group');
+        if (firstGroup) {
+            let scrollPos = 0;
+            const speed = 0.5; // px per frame (~30px/s at 60fps)
+            let paused = false;
+
+            const carousel = techTrack.closest('.tech-carousel');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', () => { paused = true; });
+                carousel.addEventListener('mouseleave', () => { paused = false; });
+                carousel.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+                carousel.addEventListener('touchend', () => { paused = false; });
+            }
+
+            function scrollCarousel() {
+                if (!paused) {
+                    scrollPos += speed;
+                    // Reset when we've scrolled past the first group
+                    if (scrollPos >= firstGroup.scrollWidth) {
+                        scrollPos = 0;
+                    }
+                    techTrack.style.transform = 'translateX(-' + scrollPos + 'px)';
+                }
+                requestAnimationFrame(scrollCarousel);
+            }
+
+            requestAnimationFrame(scrollCarousel);
+        }
+    }
 });

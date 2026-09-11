@@ -1,144 +1,648 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Brewnok is launching soon. Countdown to September 13, 2026 at 12:00 AM IST.">
-  <title>Brewnok — Something New is Brewing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewnok | SRE, IT & Automation | Agartala, Tripura, India</title>
 
-  <!-- Favicon using brand logo -->
-  <link rel="icon" type="image/png" href="brewnok-logo.png">
-  <link rel="apple-touch-icon" href="brewnok-logo.png">
+    <meta name="description" content="Brewnok provides observability, website and software development, automation, performance testing, and resilience testing services for businesses that can't afford to slow down.">
 
-  <!-- Modern Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Brewnok",
+      "url": "https://brewnok.com",
+      "foundingDate": "2025-01-07",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Agartala, Tripura, India"
+      }
+    }
+    </script>
 
-  <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/brewnok-logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ambient background glow elements -->
-  <div class="ambient-glow glow-top" aria-hidden="true"></div>
-  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
-  <div class="ambient-noise" aria-hidden="true"></div>
 
-  <div class="page-wrapper">
-    <!-- Navigation / Header -->
-    <header class="header">
-      <div class="header-inner">
-        <a href="#" class="brand-link" aria-label="Brewnok Home">
-          <img src="brewnok-logo.png" alt="Brewnok logo" class="logo">
-        </a>
-
-        <div class="header-actions">
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            <span class="status-text">Phase 1 Brewing</span>
-          </div>
-
-          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
-            <!-- Sun Icon (shown in dark mode) -->
-            <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="4"></circle>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-            </svg>
-            <!-- Moon Icon (shown in light mode) -->
-            <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Brewnok Home">
+                <img src="assets/brewnok-logo.png" alt="Brewnok Logo" class="nav-logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://tally.so/r/0Ql2BB" target="_blank" class="btn-ghost">Contact Us</a>
+                <a href="https://calendly.com/brewnok/30min" target="_blank" class="btn-acid">Schedule a Call</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+            </button>
         </div>
-      </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <section class="hero-section" aria-labelledby="hero-title">
-        <!-- Eyebrow Badge -->
-        <div class="eyebrow-badge">
-          <span class="badge-sparkle">✦</span>
-          <span>Mark The Date • 13 September 2026</span>
+    <!-- ===== SECTION 1: HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-split">
+                <div class="hero-content">
+                    <div class="hero-badge reveal">
+                        <span class="hero-badge-dot"></span>
+                        <span class="animated-typing"></span><span class="typing-cursor">|</span>
+                    </div>
+                    <h1 class="reveal">We provide top-tier <span class="accent-word">IT, SRE and Automation</span> services.</h1>
+                    <p class="hero-sub reveal">We eliminate downtime, streamline operations, and automate the complex - delivering IT, SRE, and automation solutions built for businesses that can't afford to slow down.</p>
+                    <div class="hero-actions reveal">
+                        <a href="https://tally.so/r/ODgpzR" target="_blank" class="btn-acid">
+                            Get a Quote
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#services" class="btn-ghost">Explore Services</a>
+                    </div>
+                </div>
+                <div class="hero-stats reveal">
+                    <div class="stat-box card">
+                        <div class="stat-number"><span class="counter" data-target="20" data-suffix="+">0</span></div>
+                        <p class="stat-label">Clients Served</p>
+                    </div>
+                    <div class="stat-box card">
+                        <div class="stat-number"><span class="counter" data-target="120" data-suffix="+">0</span></div>
+                        <p class="stat-label">Projects Delivered</p>
+                    </div>
+                    <div class="stat-box card">
+                        <div class="stat-number"><span class="counter" data-target="95" data-suffix="%">0</span></div>
+                        <p class="stat-label">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Headline & Subtitle -->
-        <h1 id="hero-title" class="hero-title">
-          Something new is <span class="gradient-text">brewing.</span>
-        </h1>
-        <!-- <p class="hero-subtitle">
-          We’re crafting a distinctive experience from the ground up. The countdown to our official premiere has begun.
-        </p> -->
-
-        <!-- Countdown Card Container -->
-        <div class="countdown-container" aria-label="Countdown to Launch">
-          <div class="countdown-grid">
-            <!-- Days -->
-            <div class="timer-card" data-unit="days">
-              <div class="timer-card-inner">
-                <span id="days" class="timer-number">00</span>
-                <span class="timer-label">Days</span>
-              </div>
-              <div class="card-glow"></div>
+    <!-- ===== SECTION 2: ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-text reveal">
+                    <p class="section-tag">Who We Are</p>
+                    <h2 class="section-title">Engineers, problem-solvers, and automation obsessives.</h2>
+                    <p class="about-desc">WWe don't just keep systems running, we engineer them to perform. From web and software development to IT infrastructure, SRE, observability, and automation, we design scalable, resilient, and intelligent solutions that reduce operational complexity, optimize performance, and keep your business moving.
+</p>
+                    <p class="about-desc">Founded in 2025 in Agartala, Tripura, India - we serve clients globally with a relentless focus on uptime, efficiency, and automation-first thinking.</p>
+                </div>
+                <div class="about-values reveal">
+                    <div class="value-card card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h4>Reliability First</h4>
+                        <p>99.9% uptime isn't a goal — it's a baseline.</p>
+                    </div>
+                    <div class="value-card card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <h4>Automation First</h4>
+                        <p>If it can be automated, it should be.</p>
+                    </div>
+                    <div class="value-card card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h4>Global Reach</h4>
+                        <p>Local roots, worldwide delivery.</p>
+                    </div>
+                    <div class="value-card card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h4>Client Focused</h4>
+                        <p>Your success is our only KPI.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="timer-separator" aria-hidden="true">/</div>
-
-            <!-- Hours -->
-            <div class="timer-card" data-unit="hours">
-              <div class="timer-card-inner">
-                <span id="hours" class="timer-number">00</span>
-                <span class="timer-label">Hours</span>
-              </div>
-              <div class="card-glow"></div>
-            </div>
-
-            <div class="timer-separator" aria-hidden="true">/</div>
-
-            <!-- Minutes -->
-            <div class="timer-card" data-unit="minutes">
-              <div class="timer-card-inner">
-                <span id="minutes" class="timer-number">00</span>
-                <span class="timer-label">Minutes</span>
-              </div>
-              <div class="card-glow"></div>
-            </div>
-
-            <div class="timer-separator" aria-hidden="true">/</div>
-
-            <!-- Seconds -->
-            <div class="timer-card" data-unit="seconds">
-              <div class="timer-card-inner">
-                <span id="seconds" class="timer-number">00</span>
-                <span class="timer-label">Seconds</span>
-              </div>
-              <div class="card-glow"></div>
-            </div>
-          </div>
-
-          <div class="target-meta">
-            <span class="meta-clock-icon">◷</span>
-            <span id="status" class="status-detail">Targeting 12:00 AM IST (UTC+05:30)</span>
-          </div>
         </div>
+    </section>
 
-        <!-- Waitlist / Notification Form -->
+    <!-- ===== SECTION 3: SERVICES — BENTO GRID ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">Our Services</p>
+                <h2 class="section-title">Everything your business needs to scale</h2>
+            </div>
+            <div class="bento-grid">
+                <!-- Observability / Monitoring Solutions -->
+                <div class="card bento-card reveal">
+                    <div class="bento-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h3>Observability / Monitoring Solutions</h3>
+                    <p>Gain clear visibility into your systems with proactive monitoring, actionable dashboards, and reliable alerting that helps teams resolve issues faster.</p>
+                    <div class="bento-card-visual">
+                        <div class="mini-pipeline">
+                            <div class="mini-pipeline-node">Metrics</div>
+                            <span class="mini-pipeline-arrow">→</span>
+                            <div class="mini-pipeline-node">Logs</div>
+                            <span class="mini-pipeline-arrow">→</span>
+                            <div class="mini-pipeline-node">Alerts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Development -->
+                <div class="card bento-card reveal">
+                    <div class="bento-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>Website Development</h3>
+                    <p>Modern, responsive websites built around your goals — from polished business sites to conversion-focused digital experiences that perform on every device.</p>
+                    <div class="bento-card-visual">
+                        <div class="mini-code">
+                            <span class="keyword">website</span>.launch({<br>
+                            &nbsp;&nbsp;responsive: <span class="keyword">true</span>,<br>
+                            &nbsp;&nbsp;accessible: <span class="keyword">true</span>,<br>
+                            &nbsp;&nbsp;performance: <span class="string">'fast'</span> <span class="comment">// ready to grow</span><br>
+                            })
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Development -->
+                <div class="card bento-card reveal">
+                    <div class="bento-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                    </div>
+                    <h3>Software Development</h3>
+                    <p>Custom, scalable software solutions — from requirements to deployment. We handle the full lifecycle with clean architecture, CI/CD, and production-grade code.</p>
+                    <div class="bento-card-visual">
+                        <div class="mini-bars">
+                            <div class="mini-bar" style="height: 35%;"></div>
+                            <div class="mini-bar" style="height: 55%;"></div>
+                            <div class="mini-bar" style="height: 40%;"></div>
+                            <div class="mini-bar highlight" style="height: 80%;"></div>
+                            <div class="mini-bar" style="height: 60%;"></div>
+                            <div class="mini-bar" style="height: 45%;"></div>
+                            <div class="mini-bar highlight" style="height: 95%;"></div>
+                            <div class="mini-bar" style="height: 70%;"></div>
+                            <div class="mini-bar" style="height: 50%;"></div>
+                            <div class="mini-bar" style="height: 65%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation Services -->
+                <div class="card bento-card reveal">
+                    <div class="bento-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg>
+                    </div>
+                    <h3>Automation Services</h3>
+                    <p>Reduce manual work with dependable workflows, integrations, and automated operations that improve efficiency, consistency, and scale.</p>
+                    <div class="bento-card-visual">
+                        <div class="mini-pipeline">
+                            <div class="mini-pipeline-node">Trigger</div>
+                            <span class="mini-pipeline-arrow">→</span>
+                            <div class="mini-pipeline-node">Process</div>
+                            <span class="mini-pipeline-arrow">→</span>
+                            <div class="mini-pipeline-node">Complete</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Testing -->
+                <div class="card bento-card reveal">
+                    <div class="bento-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Performance Testing</h3>
+                    <p>Load testing, stress testing, and endurance testing that uncover bottlenecks before your users do, so your systems stay fast under pressure.</p>
+                    <div class="bento-card-visual">
+                        <div class="mini-pipeline">
+                            <div class="mini-pipeline-node">Load</div>
+                            <span class="mini-pipeline-arrow">→</span>
+                            <div class="mini-pipeline-node">Stress</div>
+                            <span class="mini-pipeline-arrow">→</span>
+                            <div class="mini-pipeline-node">Report</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resilience Testing -->
+                <div class="card bento-card reveal">
+                    <div class="bento-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>
+                    </div>
+                    <h3>Resilience Testing</h3>
+                    <p>Validate how your applications respond to failures, disruptions, and unexpected conditions, then strengthen recovery paths before incidents happen.</p>
+                    <div class="bento-card-visual">
+                        <div class="mini-code">
+                            <span class="keyword">resilience</span>.check({<br>
+                            &nbsp;&nbsp;failure: <span class="string">'inject'</span>,<br>
+                            &nbsp;&nbsp;recovery: <span class="keyword">true</span> <span class="comment">// ready</span><br>
+                            })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <p style="text-align: center;">
+            <a href="services.html" target="_blank" class="btn-acid">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+        </p>
         
-      </section>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-copy">© 2026 Brewnok. All rights reserved.</span>
+    <!-- ===== SECTION 4: PRODUCTS ===== -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">Our Products</p>
+                <h2 class="section-title">Software solutions that automate and scale</h2>
+            </div>
+            <div class="products-grid">
+                <!-- Schedmate -->
+                <div class="card product-card reveal">
+                    <div class="product-badge">Featured</div>
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h3>Schedmate</h3>
+                    <p class="product-tag-label">Appointment Scheduling</p>
+                    <p class="product-desc">Automatically turns availability into confirmed appointments. Smart calendar sync, automated reminders, and timezone detection to eliminate back-and-forth emails.</p>
+                    <div class="product-visual">
+                        <div class="product-mockup">
+                            <div class="mockup-header">
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-calendar">
+                                    <div class="mockup-day booked">Mon</div>
+                                    <div class="mockup-day">Tue</div>
+                                    <div class="mockup-day booked">Wed</div>
+                                    <div class="mockup-day">Thu</div>
+                                    <div class="mockup-day active">Fri</div>
+                                </div>
+                                <div class="mockup-slots">
+                                    <div class="mockup-slot">9:00 AM — Available</div>
+                                    <div class="mockup-slot highlighted">10:30 AM — Selected ✓</div>
+                                    <div class="mockup-slot">2:00 PM — Available</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ManagerJi -->
+                <div class="card product-card reveal">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>ManagerJi</h3>
+                    <p class="product-tag-label">Hotel Management</p>
+                    <p class="product-desc">End-to-end hotel operations platform — manage guests, bookings, billing, and room services in a single unified dashboard.</p>
+                    <div class="product-visual">
+                        <div class="product-mockup">
+                            <div class="mockup-header">
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="tools-grid">
+                                    <div class="tool-item active">Rooms</div>
+                                    <div class="tool-item">Guests</div>
+                                    <div class="tool-item">Billing</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CominQR -->
+                <div class="card product-card reveal">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <h3>CominQR</h3>
+                    <p class="product-tag-label">Event Ticketing</p>
+                    <p class="product-desc">QR-based digital ticketing for seamless, contactless entry at events and venues. Fast check-ins, real-time analytics.</p>
+                    <div class="product-visual">
+                        <div class="product-mockup">
+                            <div class="mockup-header">
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="tools-grid">
+                                    <div class="tool-item">Events</div>
+                                    <div class="tool-item active">QR Scan</div>
+                                    <div class="tool-item">Reports</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slot4Dine -->
+                <div class="card product-card reveal">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
+                    <h3>Slot4Dine</h3>
+                    <p class="product-tag-label">Restaurant Reservations</p>
+                    <p class="product-desc">Smart restaurant reservation and table booking platform designed to work seamlessly for both staff and guests.</p>
+                    <div class="product-visual">
+                        <div class="product-mockup">
+                            <div class="mockup-header">
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-slots">
+                                    <div class="mockup-slot highlighted">Table 4 · 7:00 PM ✓</div>
+                                    <div class="mockup-slot">Table 8 · 8:30 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hupwiz -->
+                <div class="card product-card reveal">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    </div>
+                    <h3>Hupwiz</h3>
+                    <p class="product-tag-label">Gym Management</p>
+                    <p class="product-desc">Operational management for fitness centers — memberships, class schedules, floor access, and attendance tracking in one place.</p>
+                    <div class="product-visual">
+                        <div class="product-mockup">
+                            <div class="mockup-header">
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="tools-grid">
+                                    <div class="tool-item active">Members</div>
+                                    <div class="tool-item">Classes</div>
+                                    <div class="tool-item">Access</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BuildingBugs -->
+                <div class="card product-card reveal">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/></svg>
+                    </div>
+                    <h3>BuildingBugs</h3>
+                    <p class="product-tag-label">Property Management</p>
+                    <p class="product-desc">Residential property management — maintenance requests, resident communications, billing, and property analytics.</p>
+                    <div class="product-visual">
+                        <div class="product-mockup">
+                            <div class="mockup-header">
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="tools-grid">
+                                    <div class="tool-item">Tenants</div>
+                                    <div class="tool-item active">Requests</div>
+                                    <div class="tool-item">Billing</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-links">
-          <span class="footer-tagline">Crafted with precision.</span>
+        <br><br><br>
+        <p style="text-align: center;">
+            <a href="products.html" target="_blank" class="btn-acid">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+        </p>
+    </section>
+
+    <!-- ===== SECTION 5: PROCESS ===== -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">Our Process</p>
+                <h2 class="section-title">A simple, transparent workflow to bring your vision to reality</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-number">01</div>
+                    <h3>Tell Us Your Needs</h3>
+                    <p>Share your requirements and goals. We'll listen, ask the right questions, and provide a customized quote.</p>
+                </div>
+                <div class="process-connector reveal"></div>
+                <div class="process-step reveal">
+                    <div class="step-number">02</div>
+                    <h3>Scope & Timeline</h3>
+                    <p>We define the project scope, establish clear deadlines and milestones, and align on deliverables.</p>
+                </div>
+                <div class="process-connector reveal"></div>
+                <div class="process-step reveal">
+                    <div class="step-number">03</div>
+                    <h3>First Demo</h3>
+                    <p>We present an initial build and prototype to gather your direct feedback. No surprises.</p>
+                </div>
+                <div class="process-connector reveal"></div>
+                <div class="process-step reveal">
+                    <div class="step-number">04</div>
+                    <h3>Refinement</h3>
+                    <p>Based on your feedback, we polish, optimize, and present the final demonstration for sign-off.</p>
+                </div>
+                <div class="process-connector reveal"></div>
+                <div class="process-step reveal">
+                    <div class="step-number">05</div>
+                    <h3>Delivery</h3>
+                    <p>The final build is delivered, fully tested, launched, and supported. We don't disappear after launch.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- ===== SECTION 6: FAQ ===== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">FAQ</p>
+                <h2 class="section-title">Common questions, straight answers</h2>
+            </div>
+            <div class="faq-controls reveal">
+                <button class="faq-ctrl-btn" id="faqExpandAll">Expand All</button>
+                <button class="faq-ctrl-btn" id="faqCollapseAll">Collapse All</button>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        What kind of businesses do you work with?
+                        <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We work with startups, mid-size companies, and enterprises across industries. Whether you're a SaaS company needing reliability engineering, an e-commerce platform needing performance testing, or a traditional business looking to modernize your infrastructure — we've got you covered.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        How quickly can you start on a project?
+                        <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Most projects kick off within 1–2 weeks after the initial discovery call. For urgent infrastructure or SRE needs, we can start within 48 hours. Schedule a call and we'll give you an honest timeline.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        Do you offer ongoing support after project delivery?
+                        <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Absolutely. We offer flexible support plans — from on-call SRE support to dedicated managed services. We believe in long-term partnerships, not one-off handoffs. Every project includes a post-launch support window at no extra cost.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        What technologies do you specialize in?
+                        <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We're cloud-native specialists working across AWS, GCP, and Azure. Our stack includes Kubernetes, Terraform, Ansible, Docker, Prometheus, Grafana, Jenkins, GitHub Actions, and modern frameworks like React, Node.js, Python, and Go. We choose the right tool for the job, not the trendiest one.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        How do you price your services?
+                        <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We offer both project-based fixed pricing and retainer models depending on your needs. After the discovery call, we provide a detailed proposal with transparent pricing — no hidden costs, no surprises. We optimize for value, not billable hours.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7: CTA BANNER ===== -->
+    <section class="cta-banner" id="contact">
+        <div class="container">
+            <div class="cta-banner-inner reveal">
+                <p class="cta-banner-tag">Let's build together</p>
+                <h2>Ready to eliminate downtime and scale with confidence?</h2>
+                <p>Join 20+ businesses that trust Brewnok for their IT, SRE, and automation needs. First consultation is free.</p>
+                <div class="cta-banner-actions">
+                    <a href="https://tally.so/r/ODgpzR" target="_blank" class="btn-acid">
+                        Get a Quote
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://tally.so/r/0Ql2BB" target="_blank" class="btn-dark-ghost">Send a Message</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 8: FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="nav-logo footer-logo" aria-label="Brewnok Home">
+                        <img src="assets/brewnok-logo.png" alt="Brewnok Logo" class="nav-logo-img">
+                    </a>
+                    <p class="footer-brand-desc">Engineering reliable digital systems through observability, development, automation, and testing.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/company/brewnok-consult" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/wearebrewnok" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Observability / Monitoring Solutions</a></li>
+                        <li><a href="services.html">Website Development</a></li>
+                        <li><a href="services.html">Software Development</a></li>
+                        <li><a href="services.html">Automation Services</a></li>
+                        <li><a href="services.html">Performance Testing</a></li>
+                        <li><a href="services.html">Resilience Testing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Schedmate</a></li>
+                        <li><a href="products.html">ManagerJi</a></li>
+                        <li><a href="products.html">CominQR</a></li>
+                        <li><a href="products.html">Slot4Dine</a></li>
+                        <li><a href="products.html">Hupwiz</a></li>
+                        <li><a href="products.html">BuildingBugs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" target="_blank">About Brewnok</a></li>
+                        <li><a href="process.html" target="_blank">Our Process</a></li>
+                        <li><a href="faq.html" target="_blank">FAQ</a></li>
+                        <li><a href="privacy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://tally.so/r/ODgpzR" target="_blank">Get a Quote</a></li>
+                        <li><a href="https://calendly.com/brewnok/30min" target="_blank">Schedule a Call</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2025 Brewnok. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#hero">Back to top</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
-  </div>
 
-  <script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
+
 </body>
 </html>

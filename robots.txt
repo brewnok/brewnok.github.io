@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow python scripts or cache directories
+Disallow: /__pycache__/
+Disallow: /*.py$
+
+# Sitemap declaration
+Sitemap: https://brewnok.com/sitemap.xml
