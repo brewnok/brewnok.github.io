@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Brewnok</title>
+
+    <meta name="description" content="The page you're looking for doesn't exist. Head back to Brewnok's homepage or explore our services.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/brewnok-logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== 404 Page Specific Styles ===== */
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error-hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 64px; /* nav height */
+            text-align: center;
+        }
+
+        .error-content {
+            max-width: 640px;
+            padding: 60px 24px;
+        }
+
+        /* Terminal-style card */
+        .error-terminal {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: inset 0 1px 0 var(--white);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .error-terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .error-terminal-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .error-terminal-dot:nth-child(1) { background: #FF5F56; }
+        .error-terminal-dot:nth-child(2) { background: #FFBD2E; }
+        .error-terminal-dot:nth-child(3) { background: #27C93F; }
+
+        .error-terminal-body {
+            padding: 28px 24px;
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .error-terminal-body .keyword {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .error-terminal-body .string {
+            color: #16A34A;
+        }
+
+        .error-terminal-body .comment {
+            color: var(--text-dim);
+        }
+
+        .error-terminal-body .error-highlight {
+            color: #EF4444;
+            font-weight: 600;
+        }
+
+        .error-terminal-body .accent-text {
+            background: var(--accent);
+            color: var(--text);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background: var(--accent);
+            vertical-align: text-bottom;
+            animation: cursor-blink 1s step-end infinite;
+        }
+
+        /* Large 404 number */
+        .error-code {
+            font-size: clamp(100px, 18vw, 180px);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1;
+            color: var(--surface);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 8px;
+            -webkit-text-stroke: 2px var(--border);
+        }
+
+        .error-code .accent-digit {
+            color: var(--accent);
+            -webkit-text-stroke: 2px var(--accent);
+        }
+
+        .error-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
+        .error-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #EF4444;
+            border-radius: 2px;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        .error-title {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .error-desc {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Quick links */
+        .error-quick-links {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .error-quick-links p {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
+        .quick-links-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: inset 0 1px 0 var(--white);
+        }
+
+        .quick-link:hover {
+            color: var(--text);
+            border-color: var(--text);
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 0px var(--text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .error-content {
+                padding: 40px 20px;
+            }
+
+            .error-terminal-body {
+                font-size: 11px;
+                padding: 20px 16px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+            }
+
+            .error-actions .btn-acid,
+            .error-actions .btn-ghost {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-page">
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo" aria-label="Brewnok Home">
+                    <img src="assets/brewnok-logo.png" alt="Brewnok Logo" class="nav-logo-img">
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://tally.so/r/0Ql2BB" target="_blank" class="btn-ghost">Contact Us</a>
+                    <a href="https://calendly.com/brewnok/30min" target="_blank" class="btn-acid">Schedule a Call</a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- ===== 404 HERO ===== -->
+        <section class="error-hero">
+            <div class="error-content">
+                <!-- Error code display -->
+                <div class="error-code" aria-hidden="true">4<span class="accent-digit">0</span>4</div>
+
+                <!-- Tag -->
+                <p class="error-tag">Page Not Found</p>
+
+                <!-- Title -->
+                <h1 class="error-title">Looks like this page went off the grid.</h1>
+
+                <!-- Description -->
+                <p class="error-desc">The page you're looking for doesn't exist, may have been moved, or is temporarily unavailable. Let's get you back on track.</p>
+
+                <!-- Terminal visual -->
+                <div class="error-terminal">
+                    <div class="error-terminal-header">
+                        <span class="error-terminal-dot"></span>
+                        <span class="error-terminal-dot"></span>
+                        <span class="error-terminal-dot"></span>
+                    </div>
+                    <div class="error-terminal-body">
+                        <span class="keyword">brewnok</span>.<span class="keyword">resolve</span>(<span class="string">"/unknown-page"</span>)<br>
+                        &gt; <span class="error-highlight">Error 404</span>: Route not found<br>
+                        &gt; <span class="comment">// redirecting to safety...</span><br>
+                        &gt; status: <span class="accent-text">ready</span> <span class="terminal-cursor"></span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="error-actions">
+                    <a href="index.html" class="btn-acid">
+                        Go Home
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://tally.so/r/0Ql2BB" target="_blank" class="btn-ghost">Contact Us</a>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="error-quick-links">
+                    <p>Or try one of these:</p>
+                    <div class="quick-links-grid">
+                        <a href="services.html" class="quick-link">Services</a>
+                        <a href="products.html" class="quick-link">Products</a>
+                        <a href="about.html" class="quick-link">About Us</a>
+                        <a href="faq.html" class="quick-link">FAQ</a>
+                        <a href="process.html" class="quick-link">Our Process</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <a href="index.html" class="nav-logo footer-logo" aria-label="Brewnok Home">
+                            <img src="assets/brewnok-logo.png" alt="Brewnok Logo" class="nav-logo-img">
+                        </a>
+                        <p class="footer-brand-desc">Engineering reliable digital systems through observability, development, automation, and testing.</p>
+                        <div class="footer-socials">
+                            <a href="https://www.linkedin.com/company/brewnok-consult" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com/wearebrewnok" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="footer-col-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services.html">Observability / Monitoring Solutions</a></li>
+                            <li><a href="services.html">Website Development</a></li>
+                            <li><a href="services.html">Software Development</a></li>
+                            <li><a href="services.html">Automation Services</a></li>
+                            <li><a href="services.html">Performance Testing</a></li>
+                            <li><a href="services.html">Resilience Testing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="footer-col-title">Products</h4>
+                        <ul class="footer-links">
+                            <li><a href="products.html">Schedmate</a></li>
+                            <li><a href="products.html">ManagerJi</a></li>
+                            <li><a href="products.html">CominQR</a></li>
+                            <li><a href="products.html">Slot4Dine</a></li>
+                            <li><a href="products.html">Hupwiz</a></li>
+                            <li><a href="products.html">BuildingBugs</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="footer-col-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Brewnok</a></li>
+                            <li><a href="process.html">Our Process</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="https://tally.so/r/ODgpzR" target="_blank">Get a Quote</a></li>
+                            <li><a href="https://calendly.com/brewnok/30min" target="_blank">Schedule a Call</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">&copy; 2025 Brewnok. All rights reserved.</p>
+                    <ul class="footer-bottom-links">
+                        <li><a href="index.html">Back to Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
