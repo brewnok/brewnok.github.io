@@ -1087,6 +1087,27 @@ img {
     border-color: rgba(255,255,255,0.3);
 }
 
+.cta-banner-note {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 24px !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-email-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.cta-email-link:hover {
+    opacity: 0.85;
+}
+
 /* ===== SECTION 8: FOOTER ===== */
 .footer {
     padding: 80px 0 40px;
@@ -1110,6 +1131,34 @@ img {
     line-height: 1.7;
     max-width: 280px;
     margin-top: 16px;
+}
+
+.footer-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-email-link svg {
+    width: 15px;
+    height: 15px;
+    stroke: var(--text-dim);
+    transition: stroke 0.2s ease;
+    flex-shrink: 0;
+}
+
+.footer-email-link:hover {
+    color: var(--text);
+    transform: translateX(2px);
+}
+
+.footer-email-link:hover svg {
+    stroke: var(--text);
 }
 
 .footer-socials {
