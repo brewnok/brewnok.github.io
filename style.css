@@ -1166,6 +1166,7 @@ img {
     align-items: center;
     gap: 12px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .footer-social-link {
@@ -1190,7 +1191,12 @@ img {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    transition: transform 0.2s ease, stroke 0.2s ease;
+    transition: transform 0.2s ease, stroke 0.2s ease, fill 0.2s ease;
+}
+
+.footer-social-link svg.icon-x {
+    fill: currentColor;
+    stroke: none;
 }
 
 .footer-social-link:hover {
@@ -1204,6 +1210,11 @@ img {
 .footer-social-link:hover svg {
     transform: scale(1.05);
     stroke: var(--text);
+}
+
+.footer-social-link:hover svg.icon-x {
+    fill: var(--text);
+    stroke: none;
 }
 
 .footer-col-title {
